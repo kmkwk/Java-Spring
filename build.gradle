@@ -28,6 +28,15 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation('com.navercorp.fixturemonkey:fixture-monkey-starter:0.5.2')
+	testImplementation('com.navercorp.fixturemonkey:fixture-monkey-javax-validation:0.5.2')
+	testImplementation("com.navercorp.fixturemonkey:fixture-monkey-jackson:0.5.2")
+	testImplementation("com.navercorp.fixturemonkey:fixture-monkey-jakarta-validation:0.5.2")
+	testImplementation("com.navercorp.fixturemonkey:fixture-monkey-junit-jupiter:0.5.2")
+	testImplementation("com.navercorp.fixturemonkey:fixture-monkey-autoparams:0.5.2")
+	testImplementation("com.navercorp.fixturemonkey:fixture-monkey-engine:0.5.2")
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
