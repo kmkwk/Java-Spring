@@ -18,7 +18,14 @@ public class ApplyService {
 
     private final CouponCreateProducer couponCreateProducer;
 
+    private final AppliedUserRepository appliedUserRepository;
+
     public void apply(Long userId) {
+        Long apply = appliedUserRepository.add(userId);
+
+        if (apply != 1) {
+            return;
+        }
 
         Long count = couponCountRepository.increment();
 
