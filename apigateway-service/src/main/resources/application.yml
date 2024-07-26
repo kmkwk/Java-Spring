@@ -1,24 +1,24 @@
 server:
   port: 8000
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
 
 spring:
   application:
     name: apigateway-service
-#  rabbitmq:
-#    host: 127.0.0.1
-#    port: 5672
-#    username: guest_api
-#    password: guest_api
-#    listener:
-#      simple:
-#        prefetch: 5
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        prefetch: 5
   cloud:
     gateway:
       default-filters:
@@ -102,8 +102,9 @@ spring:
 #token:
 #  secret: user_token
 #
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: refresh, health, beans, httptrace, busrefresh, info, metrics, prometheus
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, httptrace, busrefresh
+#        , info, metrics, prometheus

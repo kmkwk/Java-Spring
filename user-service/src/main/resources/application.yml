@@ -16,14 +16,14 @@ spring:
 #  sleuth:
 #    sampler:
 #      probability: 1.0
-#  rabbitmq:
-#    host: 127.0.0.1
-#    port: 5672
-#    username: guest_user
-#    password: guest_user
-#    listener:
-#      simple:
-#        prefetch: 5
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        prefetch: 5
   datasource:
     url: jdbc:mysql://localhost:3306/study?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
     username: root
@@ -39,16 +39,16 @@ spring:
         format_sql: true
         globally_quoted_identifiers: true
         globally_quoted_identifiers_skip_column_definitions: true
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-  #    prefer-ip-address: true
-  #    ip-address: ${server.address}
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka
-    fetch-registry: true
-    register-with-eureka: true
+#eureka:
+#  instance:
+#    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+#  #    prefer-ip-address: true
+#  #    ip-address: ${server.address}
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:8761/eureka
+#    fetch-registry: true
+#    register-with-eureka: true
 
 greeting:
   message: Welcome to the Simple E-commerce.
@@ -61,12 +61,13 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, beans, busrefresh, info, metrics, prometheus
+        include: refresh, health, beans, httptrace, busrefresh
+#        , info, metrics, prometheus
 
 #gateway:
 #  ip: 10.204.136.204
 
-token:
-  expiration_time: 86400000
-  secret: user_token
-
+#token:
+#  expiration_time: 86400000
+#  secret: user_token
+#

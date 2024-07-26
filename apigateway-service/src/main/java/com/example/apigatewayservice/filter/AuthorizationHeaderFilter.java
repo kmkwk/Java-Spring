@@ -37,9 +37,9 @@ public class AuthorizationHeaderFilter extends AbstractGatewayFilterFactory<Auth
         return (exchange, chain) -> {
             ServerHttpRequest request = exchange.getRequest();
 
-            if (!request.getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
-                return onError(exchange, "No authorization header", HttpStatus.UNAUTHORIZED);
-            }
+//            if (!request.getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
+//                return onError(exchange, "No authorization header", HttpStatus.UNAUTHORIZED);
+//            }
 
             HttpHeaders headers = request.getHeaders();
             Set<String> keys = headers.keySet();
@@ -57,9 +57,9 @@ public class AuthorizationHeaderFilter extends AbstractGatewayFilterFactory<Auth
 //            ResponseCookie c1 = ResponseCookie.from("my_token", "test1234").maxAge(60 * 60 * 24).build();
 //            response.addCookie(c1);
 
-            if (!isJwtValid(jwt)) {
-                return onError(exchange, "JWT token is not valid", HttpStatus.UNAUTHORIZED);
-            }
+//            if (!isJwtValid(jwt)) {
+//                return onError(exchange, "JWT token is not valid", HttpStatus.UNAUTHORIZED);
+//            }
 
             return chain.filter(exchange);
         };
