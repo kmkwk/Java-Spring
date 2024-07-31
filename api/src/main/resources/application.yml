@@ -14,3 +14,7 @@ spring:
         format_sql: true
         globally_quoted_identifiers: true
         globally_quoted_identifiers_skip_column_definitions: true
+
+
+mybatis:
+  mapper-locations: classpath:/mybatis/*.xml

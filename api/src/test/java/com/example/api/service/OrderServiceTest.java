@@ -11,7 +11,7 @@ class OrderServiceTest {
     private OrderService orderService;
 
     @Test
-    public void eventListenerTest() {
+    public void 이벤트_리스너() {
         Long orderId = 1L;
 
         orderService.createOrder(orderId);
