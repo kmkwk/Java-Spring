@@ -1,5 +1,6 @@
 package com.example.api.adapter.sns;
 
+import com.example.api.service.SnsService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

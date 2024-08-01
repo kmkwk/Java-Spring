@@ -1,6 +1,7 @@
-package com.example.api.adapter.sns;
+package com.example.api.service;
 
 
+import com.example.api.adapter.sns.SocialMedia;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,9 @@ public class SnsService {
     private final SocialMedia facebookAdapter;
     private final SocialMedia instagramAdapter;
 
+
     public String createBoard(String platform, String title, String content, Long userId) {
+
         SocialMedia socialMedia = switch (platform) {
             case "facebook" -> facebookAdapter;
             case "instagram" -> instagramAdapter;
