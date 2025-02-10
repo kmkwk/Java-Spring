@@ -27,12 +27,11 @@ public class CouponCreatedConsumer {
     @KafkaListener(topics = "coupon_create", groupId = "group_1")
     public void listener(Long userId) {
         try {
+            logger.info("data: + ", userId);
             couponRepository.save(new Coupon(userId));
         } catch (Exception e) {
             logger.error("failed to create coupon::" + userId);
             failedEventRepository.save(new FailedEvent(userId));
         }
     }
-
-
 }
